@@ -1,0 +1,41 @@
+CÍL PROJEKTU
+
+Cílem této práce je představit uživateli koncept konečné projektivní roviny interaktivní formou takříkajíc z mravenčí perspektivy. Projektivní roviny jsou jedna z oblastí, do níž běžná středoškolská matematika téměř nezabrousí, přestože jejich základní pravidla jsou relativně snadno pochopitelná. Jediný matoucí aspekt s nimi svázané terminologie jsou snad pojmy "přímka" a "bod", které má většina středoškoláků neodmyslitelně spjaty s Eukleidovskou geometrií. V uživatelském rozhraní tohoto programu se jim proto zcela vyhýbám. Jednou z hlavních motivací je demonstrovat rovnocennost všech bodů a přímek, kterou ani ten nejsymetričtější diagram nevyjadřuje zcela uspokojivě.
+
+ÚČEL PROGRAMU
+
+Jak je zmíněno v uživatelské dokumentaci, účelem tohoto programu je simulovat procházku projektivní rovinou. Lokality v rámci této roviny se od sebe na začátku nijak neliší, kromě rozdělení na dvě skupiny odpovídající bodům a přímkám (v simulaci jsou nazývány "chodby" a "místnosti") Zatím je plně podporovaná pouze Fanova rovina, nicméně je relativně jednoduché program přizpůsobit k simulaci jiné konečné projektivní roviny.
+
+POPIS PROGRAMU
+
+Program splňuje následující funkce:
+1.) Vytvoří model projektivní roviny (seznam bodů a přímek a jejich vzájemné vztahy)
+2.) Umožňuje uživateli přecházet mezi body a přímkami, které jimi procházejí.
+3.) Umožňuje uživateli označit body, přímky a průchody mezi nimi vlastními řetězci textu
+
+Model projektivní roviny
+Nejdříve jsou definovány množiny bodů a přímek v podobě seznamu indexů. Jejich mohutnost (počet bodů či přímek) je stejná a je dána vzorcem q^2 + q + 1, kde q je řád projektivní roviny. Lokace je popsána uspořádanou dvojicí: typ lokace a index. Typ je rozlišení mezi bodem a přímkou pomocí logické hodnoty, indexem je index bodu či přímky v seznamu. Funkce jeBod() pro danou lokaci vrací její typ.
+Incidence je vztah mezi přímkou a bodem, který spočívá v tom, že bod na přímce leží neboli že přímka bodem prochází. V tomto modelu je popsána tzv. vektorem incidence, který je lze pro jednotlivé projektivní roviny stanovit empiricky.
+Funkce bodyPrimky(), resp. primkyBodem() vrací pro index dané přímky, resp. bodu seznam incidentních bodů, resp. přímek.
+
+Uživatelské jmenovky
+Ve slovnících jmenovkaBodu[], jmenovkaPrimky[], jmenovkaPrimkyVBode[] a jmenovkaBoduNaPrimce[] je připraveno místo pro označení jednotlivých bodů (místností) a přímek (chodeb).
+
+Globální stavová proměnná "tady"
+Pro pochopení práce funkcí rozcestnik(), pojmenujToTady(), projdiDvermi() a vlastního těla programu musíme zmínit globální proměnnou tady. Její hodnota popisuje lokaci, ve které se uživatel právě nachází.
+
+Interaktivita
+Interakci s uživatelem zajišťuje funkce rozcestnik().
+Nejprve sestaví popis situace (typ a případné jméno aktuální lokace, seznam a jména dveří) a poskytne ho uživateli. Následně mu předloží seznam možností a intepretuje jeho vstup. Vypnutí simulace obstará sama, pro změnu označení lokace volá pomocnou funkci pojmenujToTady() a pro průchod dveřmi funkci projdiDvermi().
+Jejím výstupem je logická hodnota vyjadřující, zda uživatel hodlá v simulaci pokračovat.
+
+Vlastní tělo programu
+Stavová proměnná "tady" je nastavena na hodnotu označující první bod v seznamu.
+Funkce rozcestnik() je volána v rámci vyhodnocení vstupní podmínky while cyklu s prázdným tělem, takže se její volání opakuje, dokud nevrátí hodnotu False.
+
+(Poznámka: Funkce cheat() je repozitářem kódu určeného pro ladění v rámci případného dalšího vývoje projektu.)
+
+
+Použité zdroje: Články na české a anglické Wikipedii věnované projektivní geometrii, příručka jazyka Python na W3Schools
+
+Ráda bych také poděkovala za konzultace svému vedoucímu práce a svému otci (pro účely Github verze neuvádím jména)

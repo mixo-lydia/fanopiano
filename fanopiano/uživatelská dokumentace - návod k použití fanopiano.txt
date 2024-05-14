@@ -1,0 +1,31 @@
+NEŽ SIMULACI SPUSTÍTE:
+
+Účelem tohoto programu je simulovat procházku projektivní rovinou. Fanova rovina, nejjednodušší z projektivních rovin, se skládá ze sedmi bodů symetricky spojených sedmi přímkami tak, že každým bodem prochází právě tři přímky - a naopak, každá přímka prochází právě třemi body. V této simulaci jsou popsány jako chodby a místnosti, propojené dveřmi. Simulace probíhá formou konverzace v textovém režimu, podobně jako textové hry.
+
+Každá chodba a místnost má následující :
+1.) Troje dveře, vedoucí vždy z chodby do místnosti nebo z místnosti do chodby
+2.) Jmenovku, kterou je možno a patrně bude nutno upravovat
+
+Jmenovky mají i dveře, a to z každé strany jednu. Jmenovky dveří, místností a chodeb mají za účel umožnit Vám, abyste si značili cestu, kudy jste prošli.
+Bez jmenovek jsou všechny místnosti navzájem zcela zaměnitelné, stejně tak i chodby. Tato symetrie je obecnou vlastností projektivních rovin - je na Vás, abyste lokacím udělili jedinečnost tím, že je pojmenujete.
+
+Hra záměrně nemá žádný pevně určený cíl. Chcete-li vyhrát, máte několik smysluplných možností, například:
+1.) Navštívit každou místnost. Na to, abyste je od sebe rozeznali, je patrně budete muset pojmenovat.
+2.) Pojmenovat všechno, co se pojmenovat dá.
+3.) Vyznat se v celém labyrintu natolik, že se z každé lokace dostanete do libovolné jiné minimálním počtem kroků (mezi místnostmi to jsou dva - z místnosti do chodby, kterou s cílovou místností sdílí a z chodby do cílové místnosti. Stejně tak mezi chodbami)
+4.) Udělat cokoli z toho za co nejmenší čas/v co nejmenším počtu kroků/co nejelegantněji a tak podobně.
+
+Tento seznam samozřejmě není úplný. Pokud přijdete na jakýkoli jiný cíl, můžete se ho pokusit uskutečnit - k tomu tu simulace je.
+
+Pro spuštění stačí otevřít kód v aplikaci Python nebo ho dostat do jakéhokoliv prostředí, ve kterém Python běží.
+
+Navrhovaný způsob spuštění:
+- nainstalujte aplikaci Python
+- otevřete v ní soubor s programem
+
+
+PO SPUŠTĚNÍ SIMULACE:
+
+Při spuštění programu dojde automaticky k vypsání hlavní nabídky, pomocí jejíchž příkazů můžete přejmenovávat lokální místnost nebo chodbu, procházet dveřmi a zároveň je pojmenovávat nebo přejmenovávat (pozor, obsah jmenovky dveří lze měnit pouze tehdy, když jimi procházíte, a to pouze z té strany, z níž jste jimi prošli, z druhé strany jsou stále nepojmenované, takže je výhodné věnovat nějaký čas vymýšlení strategie pro případ náhodného návratu do lokace, kde jste byli předtím!)
+Jedním z příkazů hlavní nabídky lze také program ukončit.
+Hodně štěstí!
